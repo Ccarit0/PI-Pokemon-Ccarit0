@@ -34,6 +34,7 @@ const { Pokemon } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+console.log(sequelize.models)
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
