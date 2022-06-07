@@ -7,7 +7,14 @@ const myInfoPokes = arrPokes.map((myPokesToApiExt) => {
     return {
         id: myPokesToApiExt.data.id,
         name: myPokesToApiExt.data.name,
-        img: myPokesToApiExt.data.types.map((type) => type.type.name),
+        hp: myPokesToApiExt.data.stats[0].base_stat,
+        attack: myPokesToApiExt.data.stats[1].base_stat,
+        defense: myPokesToApiExt.data.stats[2].base_stat,
+        speed: myPokesToApiExt.data.stats[5].base_stat,
+        height:myPokesToApiExt.data.height,
+        weight:myPokesToApiExt.data.weight,
+        img: myPokesToApiExt.data.sprites.front_default,
+        types: myPokesToApiExt.data.types.map((type) => type.type.name),
         estadist: myPokesToApiExt.data.stats[1].base_stat
     }
 })
@@ -31,7 +38,8 @@ function pokesFromBd(pokesData){
             height:p.dataValues.height,
             weight:p.dataValues.weight,
             img: p.dataValues.img,
-            types: p.dataValues.types.map((e) => e.name)
+            types: p.dataValues.types.map((e) => e.name),
+            createInDb: p.dataValues.createInDb
 
         }
     })
@@ -52,7 +60,9 @@ function toCreatePokes(infoCreated){
             height:p.dataValues.height,
             weight:p.dataValues.weight,
             img: p.dataValues.img,
-            types: p.dataValues.types.map((e) => e.name) 
+            types: p.dataValues.types.map((e) => e.name),
+            createInDb: p.dataValues.createInDb
+             
         }
     })
     console.log(pokesToBd);
@@ -92,7 +102,8 @@ function pokeToBdId (pokeId){
         height:pokeId.height,
         weight:pokeId.weight,
         img: pokeId.img,
-        types: pokeId.types.map((e) => e.name) 
+        types: pokeId.types.map((e) => e.name),
+        createInDb: pokeId.createInDb
     }
     return searchPoke
 };
@@ -110,7 +121,8 @@ function pokesByName(p){
         height:p.dataValues.height,
         weight:p.dataValues.weight,
         img: p.dataValues.img,
-        types: p.dataValues.types.map((e) => e.name) 
+        types: p.dataValues.types.map((e) => e.name),
+        createInDb: p.dataValues.createInDb
     }
     return dataPoke
 }

@@ -34,8 +34,8 @@ module.exports = (sequelize) => {
     weight: {
       type: DataTypes.INTEGER
     },
-    createInDb: {
-      type: DataTypes.BOOLEAN,
+    createInDb: {               // todos los que vengan con esta propiedad es porque están creados en la BD
+      type: DataTypes.BOOLEAN,  // es decir, los que se agregan por body (los que crea el usuario)
       allowNull: false,
       defaultValue: true
     }
