@@ -1,0 +1,45 @@
+
+ 
+.background {
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;  
+    background-position: center; 
+    
+}
+
+.container{
+    display:flexbox;
+    align-items:flex-start;
+    justify-content:space-around;
+}
+
+.tituloLanding{
+
+    color: darkgoldenrod;
+    text-align: center;
+}
+
+.buttonLanding{
+    background-color:rgba(0, 0, 0, 0.916);
+    height: 30px;
+    width: 300px;
+    border-color: darkgoldenrod;
+    border-radius: 8px;
+    color: rgb(166, 153, 51);
+}
+
+.myName{
+    margin-bottom: 0px;
+    padding: 10px;
+}
+/* .imgLanding{
+    background-position: center;
+    height: 20%;
+    width: 1%;
+
+    
+}  */

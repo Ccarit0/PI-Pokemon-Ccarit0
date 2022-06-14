@@ -1,5 +1,4 @@
-
-export const landingPage = () =>{
+const PokeCard = () =>{
     return (
         <div className="PokePage">
             <h1 className="tituloLanding">Welcome to my PokePage</h1>
@@ -7,3 +6,5 @@ export const landingPage = () =>{
         </div>
     )
 }
+
+export default PokeCard;
