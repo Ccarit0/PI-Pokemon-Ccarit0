@@ -205,8 +205,9 @@ async function getById(req, res) {
 ///////////////////ya re está este de crear POKEEE -- NO TOCAR////////////////////////////
 
 async function createPokemon (req, res) {
+
     let  {name, hp, attack, defense, speed, height, wheight, img, type} = req.body;
-    // console.log(req.body, 'si llega') // siii llegó el obj de poke creado
+    console.log(type, 'si llega') // siii llegó el obj de poke creado
 
     try {
         const pokemonCreated = await Pokemon.create({
@@ -238,16 +239,22 @@ async function createPokemon (req, res) {
            return postTypes
 
             
-        });
+            });
         const idTypes = await Promise.all(buscaUno)
         const mapIdTypes = idTypes.map( idt => idt.dataValues.id)
         
-
+        // EL ADDTYPE  es para que se unan las dos tablas, los poke creados y los id de los types que se eligieron
         mapIdTypes.forEach(cadaIdType => pokemonCreated.addType(cadaIdType))
 
 
-        // console.log(mapIdTypes, 'idTypes')
-        return res.status(200).json(pokemonCreated);
+        // console.log(pokemonCreated)
+        const pokeWithTypes = await Pokemon.findByPk(pokemonCreated.id, {
+            include: [Type]
+        });
+        const pokeResultByTypes = pokeToBdId(pokeWithTypes);
+        
+        // console.log(pokeWithTypes.dataValues)
+        return res.status(200).json(pokeResultByTypes);
 
     } catch (error) {
         res.status(404).send('the poke cant load');
