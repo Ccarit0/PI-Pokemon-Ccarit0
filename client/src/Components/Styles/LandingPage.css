@@ -1,41 +1,76 @@
 
  
 .background {
+    background-color: white;
+    flex-direction:column;
+    display: flex;
+    flex-basis: auto;
+    flex-wrap: auto;
+    align-items: stretch;
+    /* justify-content: center; */
+    /* 
+    width: 100%;
     min-height: 100vh;
     background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-size: cover;  
-    background-position: center; 
+    background-position: center;  */
     
 }
 
-.container{
-    display:flexbox;
-    align-items:flex-start;
-    justify-content:space-around;
+ .container{
+    background-color: white;
+    flex-direction:column;
+    display: flex;
+    flex-basis: auto;
+    align-items: stretch;
+    justify-content:flex-start;
 }
 
 .tituloLanding{
-
+    
+    flex-wrap:1 1 200px ;
+    flex-shrink: 1 1 200px;
     color: darkgoldenrod;
     text-align: center;
+    align-items: flex-start;
+    justify-content:flex-start;
 }
 
 .buttonLanding{
+    flex-wrap: 1 1 200px;
+    flex-shrink: 1 1 200px;
+    align-items: flex-end; 
+    justify-content:end;
     background-color:rgba(0, 0, 0, 0.916);
     height: 30px;
     width: 300px;
     border-color: darkgoldenrod;
     border-radius: 8px;
     color: rgb(166, 153, 51);
+
+}
+.pikachuEsp{
+    flex-wrap: 3 1 200px;
+    flex-shrink: 3 1 200px;
+    align-items:stretch;
+    justify-content:flex-start;
+    width: 700px;
+    margin-bottom: -70px;
 }
 
 .myName{
-    margin-bottom: 0px;
-    padding: 10px;
-}
+    flex-wrap: 1 1 200px;
+    flex-shrink: 1 1 200px;
+    align-items: flex-end;
+    justify-content:left;
+    /* margin-bottom: 0px;
+    margin-top: 0%; */
+} 
+
+
+
+/*
+
 /* .imgLanding{
     background-position: center;
     height: 20%;

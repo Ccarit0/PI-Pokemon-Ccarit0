@@ -1,0 +1,40 @@
+.background{
+    background-color: rgb(210, 169, 210);
+    flex-direction:column;
+    display: flex;
+    align-items: center;
+}
+
+.imgDetail{
+    height: 400px;
+    width: 300px;
+    align-items: flex-end;
+    box-shadow:4px 4px 8px rgb(77, 14, 91);
+
+}
+
+.allDetails{
+flex-wrap: nowrap;
+margin-top: -200px;
+}
+    .firstD{
+        
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+    }
+
+    .secondD{
+        flex-direction: row;
+        display: flex;
+        align-items: flex-end;
+    }
+
+.caminanding{
+    flex-direction: column;
+    display: flex;
+    background-color: rgb(89, 58, 118);
+    margin-bottom: -100px;
+    height: 100px;
+    width:fit-content;
+}
