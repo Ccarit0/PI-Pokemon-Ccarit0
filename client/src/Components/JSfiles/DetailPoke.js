@@ -6,7 +6,7 @@ import Nav from "./Nav";
 import carta1 from '../../Media/Images/carta1edit.fw.png'
 import '../Styles/DetailPoke.css'
 import loading from '../../Media/Gifs/loading.gif'
-import PokeCard from "./PokeCard";
+// import PokeCard from "./PokeCard";
 
 
 const DetailPoke = () =>{
@@ -45,15 +45,15 @@ useEffect(() => {
                             <h4>DEFENSE: {pokeD.defense}</h4><br/>
                         </div>
                         <div className='secondD'>
-                        <h4>WEIGHT: {pokeD.weight}</h4>
-                        <h4>HEIGHT: {pokeD.height}</h4>
+                            <h4>WEIGHT: {pokeD.weight}</h4>
+                            <h4>HEIGHT: {pokeD.height}</h4>
                         </div>
                     </div>
-                    <div className="typesDetail">
-                        <h3>TYPES: {pokeD.types}</h3>
-                    </div>
+                        <div className="typesDetail">
+                            <h3>TYPES: {pokeD.types}</h3>
+                        </div>
                     <div>
-                    <img className='caminanding'src={loading} alt='image not found'></img>
+                        <img className='caminanding'src={loading} alt='image not found'></img>
                     </div>
                 </div>
             }

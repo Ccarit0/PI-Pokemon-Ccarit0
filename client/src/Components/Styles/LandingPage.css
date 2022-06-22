@@ -19,6 +19,7 @@
 
  .container{
     background-color: white;
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
     flex-direction:column;
     display: flex;
     flex-basis: auto;
@@ -30,7 +31,10 @@
     
     flex-wrap:1 1 200px ;
     flex-shrink: 1 1 200px;
-    color: darkgoldenrod;
+    color: rgb(114, 13, 118);
+    text-shadow: 4px 4px 8px rgb(212, 53, 244);;
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    letter-spacing:3px;
     text-align: center;
     align-items: flex-start;
     justify-content:flex-start;
@@ -42,11 +46,12 @@
     align-items: flex-end; 
     justify-content:end;
     background-color:rgba(0, 0, 0, 0.916);
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
     height: 30px;
     width: 300px;
-    border-color: darkgoldenrod;
+    border-color: rgb(218, 70, 198);
     border-radius: 8px;
-    color: rgb(166, 153, 51);
+    color: rgb(212, 189, 234);
 
 }
 .pikachuEsp{
@@ -59,8 +64,9 @@
 }
 
 .myName{
-    flex-wrap: 1 1 200px;
-    flex-shrink: 1 1 200px;
+    color: rgb(130, 32, 65);
+    letter-spacing:5px;
+    text-shadow:4px 4px 8px rgb(77, 14, 91);
     align-items: flex-end;
     justify-content:left;
     /* margin-bottom: 0px;

@@ -9,12 +9,12 @@ const PokeCard = ({id, img, name, types}) =>{
     // console.log(id, name, img, types)
     return (
         <div className="Card">
-            <h4 className="PokeName">Pokemon: {name}</h4>
+            <h3 className="PokeName">{name}</h3>
             <Link to={'/pokemons' + id}>
                 <img className="pokeImg" src={img} alt='PokeImg not found'></img>
             </Link>
-            <h4 className="types">Types: {types.map(type => "- "+ type + " ")}</h4>
-            <Link to={`/pokemons/${id}`}>+</Link>
+            <h4 className="types">TYPES: {<br />}{types.map(type =>  "-" + type + " " )}</h4>
+            <Link to={`/pokemons/${id}`}>{<button className="boton">+</button>}</Link>
         </div>
     )
 }

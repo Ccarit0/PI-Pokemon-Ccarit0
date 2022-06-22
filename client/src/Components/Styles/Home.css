@@ -1,3 +1,16 @@
+/* .url{cursor:url(http://falconmasters.com/img/cursor.gif), auto;} */
+/*
+para cambiar el CURSOR
+*/
+
+.Home{
+    background-color: rgba(250, 144, 241, 0.644);
+    flex-direction: column;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
 .backgroundLoading{
     background-color: white;
     flex-direction: column;
@@ -21,4 +34,102 @@
     color: rgb(130, 32, 65);
     letter-spacing:5px;
     text-shadow:4px 4px 8px rgb(77, 14, 91);
+}
+
+.bottonBox1{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 30px;
+
+}
+
+.create{
+    background-color: rgb(77, 14, 91);
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    color:rgb(227, 158, 181) ;
+    font-size: 15px;
+    letter-spacing:3px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+}
+
+.filters{
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+
+.abc{
+    color:rgb(77, 14, 91); 
+    font-size: 15px;
+    letter-spacing:3px;
+    width: 200px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+}
+
+.TypeFilter{
+    color:rgb(77, 14, 91); 
+    font-size: 15px;
+    letter-spacing:3px;
+    width: 200px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+}
+
+.filterStats{
+    color:rgb(77, 14, 91); 
+    font-size: 15px;
+    letter-spacing:3px;
+    width: 200px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+}
+
+.filterApi{
+    color:rgb(77, 14, 91); 
+    font-size: 15px;
+    letter-spacing:3px;
+    width: 200px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+}
+
+.botonReload{
+    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:flex-end;
+    padding: 30px;
+    box-shadow: 0px 3px 3px rgb(77, 14, 91);
+}
+
+.reload{
+    background-color: rgb(77, 14, 91); 
+    color: rgb(227, 158, 181) ; 
+    font-size: 15px;
+    letter-spacing:3px;
+    width: 200px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+}
+
+.cards{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:flex-end;
+    padding: 30px;
+    box-shadow: 0px 3px 3px rgb(77, 14, 91);
 }

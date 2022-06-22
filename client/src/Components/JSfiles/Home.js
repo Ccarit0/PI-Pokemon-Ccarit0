@@ -7,7 +7,8 @@ import Paginado from './Paginado';
 import '../../Redux/Reducer/index';
 import Nav from './Nav';
 import loading2 from '../../Media/Gifs/loading2.gif'
-import '../Styles/Home.css'
+import { Link } from 'react-router-dom';
+import '../Styles/Home.css';
 
 
 // uso el useEffect para ejecutar la function getAllPokes() ANTEESS ( el array vacío)  de renderizar el componente HOME
@@ -17,18 +18,23 @@ export default function Home(){
 
     const dispatch = useDispatch();
     const allPokemons = useSelector(state => state.pokemons)
-    const allTypes = useSelector(state => state.pokemonsType)
-
-                // estados locales\\
-
+    const allTypes = useSelector(state => state.pokemonsTypes)
+    console.log(allTypes, 'types')
+    const pokesFilt = useSelector(state => state.pokemonsFiltered)
+    
+    // estados locales\\
+    
     const [current, setCurrent] = useState(1); // muestra la pág actual
     const [currentPage, setCurrentPage] = useState(12); // POKES mostrados por pág
     const [order, setOrder] = useState('');
     const upToThisPoke = current * currentPage // pagina actual por catidad de pokes por pag
     const firstPoke = upToThisPoke - currentPage // de qué poke empieza cada pág --> ej en pag2 --> 2*12 pokes = 24
-                                                // le restamos los 12 que entran el pa pag, quedan 12 pokes
-                                                //desde el nro 12 al 23, porq el último no lo incluye
-    const pokesToPag = allPokemons.slice(firstPoke, upToThisPoke)
+    // le restamos los 12 que entran el pa pag, quedan 12 pokes
+    //desde el nro 12 al 23, porq el último no lo incluye
+    const [filtrados, setFiltrados] = useState([]);
+    
+    const pokesToPag = filtrados.slice(firstPoke, upToThisPoke)
+    // console.log(filtrados, 'home')
 
                         // pages \\
     const paginado = (numberPage) => {
@@ -43,29 +49,59 @@ export default function Home(){
 
     //                     //filters\\   
     useEffect(() => {
-        dispatch(getAllPokemons()) // el dispatch me manda al reducer, por parámetro un objeto que incluya type sí o sí.
-    },[dispatch])
-
-    useEffect(() => {
+        dispatch(getAllPokemons())  
         dispatch(getAllTypesPoke())
-    }, [dispatch])
+       },[])
+
+    useEffect(()=>{
+        setFiltrados(allPokemons)
+    }, [allPokemons])
 
     function handleReload(e){
         e.preventDefault();
         dispatch(reload(e))
     }
 
-    function handleOrderAZ(e){
+    function handleOrderAbc(e){
         e.preventDefault();
-        dispatch(orderByAz(e.target.value));
-        setCurrent(1);
-        setOrder(`Ordenado por ${e.taget.value}`)
-    }
+        e.target.value === 'asc' ?
+            setFiltrados ([...filtrados.sort(function (a, b){
+                if(a.name > b.name) {
+                    return 1
+                }
+                if(b.name > a.name) {
+                    return -1
+                }
+                return 0
+            })]) 
+            :
+            setFiltrados([...filtrados.sort(function(a,b){
+                if(a.name > b.name){
+                    return -1
+                }
+                if(b.name > a.name){
+                    return 1
+                }
+                return 0
+            })])
+        
+        // console.log(e.target.value, 'sklnfpair')
+
+        // console.log(e.target.value)
+        // dispatch(orderByAz(e.target.value));
+        
+        // setCurrent(1);
+        // setOrder(`Ordenado por ${e.taget.value}`)
+    }//FUNCIONA, pero sólo hace el filt UNA VEZ para A-Z y UNA VEZ para Z-A; :/
+    console.log(filtrados, 'ando?')
+    
     
     function handleFilterType(e){
         e.preventDefault();
         dispatch(filterByType(e.target.value))
     }
+
+
     function handleOrderByStats(e){
         e.preventDefault();
         dispatch(orderByStats(e.target.value));
@@ -74,6 +110,7 @@ export default function Home(){
     }
 
     function handleFilterApi(e){
+        e.preventDefault();
         dispatch(filterApi(e.target.value))
     }
 
@@ -91,29 +128,65 @@ export default function Home(){
     }else{
         return (
             <div className="Home">
-
-                <Nav />
-
-                <div>
-                </div>
-            
                 <h1 className="tituloLanding">Welcome to my PokePage</h1>
-                <Paginado className='paginadoStyle' pokemonsPage={currentPage} allPokemons = {allPokemons.length} paginado = {paginado}></Paginado> 
-                 
-                {pokesToPag && pokesToPag.map( p =>{
-                   return(
-                    <PokeCard
-                    id={p.id}
-                    img={p.img}
-                    name={p.name}
-                    types={p.types}
-                    key={p.id}
-                    />
-                    )
-                })} 
+                    <Nav />
+                <div className='bottonBox1'>
+                    <div>
+                        <Link to='/pokemons/create'>
+                            <button className='create'>New Poke</button>
+                        </Link>    
+                    </div>
+                    <Paginado className='paginadoStyle' pokemonsPage={currentPage} allPokemons = {allPokemons.length} paginado = {paginado}></Paginado> 
+                </div>
+                <div className='filters'>
+                    <select className='abc' value=''onChange={(e) => handleOrderAbc(e)}>
+                        <option value='' disabled >Abc Order ...</option>
+                        <option value='asc'>A to Z ...</option>
+                        <option value='des'>Z to A ...</option>
+                    </select>
+                    <br />
+                    <select className='TypeFilter' onChange={(e) => handleFilterType(e)}>
+                        <option value='all'>Type Filter...</option>
+                        {
+                         allTypes?.map(p => {
+                            return <option value={p} key={p}>{p}</option>
+                         })   
+                        }
+                    </select>
+                    <br />
+                    <select className='filterStats' onChange={(e) => handleOrderByStats(e)}>
+                        <option value='all'>Hp Order...</option>
+                        <option value='attack'>Attack Order...</option>
+                        <option calue='defense'>Defense Order...</option>
+                    </select>
+                    <br />
+                    <select className='filterApi' onChange={(e) => handleFilterApi(e)}>
+                        <option value='pokes'>Exist or Created Filter...</option>
+                        <option value='api'>Exist now...</option>
+                        <option calue='bd'>Create...</option>
+                    </select>
+                </div>
+                <div className='botonReload'>
+                    <Link to='/home'>
+                        <button className='reload' onClick={(e) =>handleReload(e) }>Reinicianding :P ...</button>
+                    </Link>
+                </div>
+                
+                <div className='cards'>
+
+                    {pokesToPag && pokesToPag.map( p =>{
+                    return(
+                        <PokeCard
+                        id={p.id}
+                        img={p.img}
+                        name={p.name}
+                        types={p.types}
+                        key={p.id}
+                        />
+                        )
+                    })} 
                
-                
-                
+                </div>
             </div>
         )
             // el .slice(num1/num2) --> (1*12)-12 --> agarra desde el poke 0, 

@@ -1,0 +1,50 @@
+.Card{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:center;
+    margin: 20px;
+    padding: 30px;
+    border: 1px solid rgb(187, 112, 216);
+    border-radius: 8%;
+    box-shadow: 4px 4px 4px rgb(77, 14, 91);
+}
+
+.PokeName{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    padding: 20px;
+    width: 200px;
+    background-color:rgba(76, 18, 91, 0.122);
+    box-shadow: 0px 2px 4px rgb(77, 14, 91);
+    letter-spacing:3px;
+}
+
+.pokeImg{
+    margin-top: -20px;
+    margin-bottom: -20px;
+    justify-content:center;
+   
+    width: 200px;
+}
+
+.types{
+    padding: 20px;
+    width: 200px;
+    background-color:rgba(76, 18, 91, 0.122);
+    box-shadow: 0px 2px 4px rgb(77, 14, 91);
+    letter-spacing:3px;
+}
+
+.boton{
+    background-color:rgb(64, 27, 91) ;
+    color: rgb(242, 197, 239);
+    justify-content: center;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    margin: -30px;
+    border: 0px;
+    border-radius: 100%;
+    box-shadow: 2px 4px 4px rgb(105, 86, 109);
+}

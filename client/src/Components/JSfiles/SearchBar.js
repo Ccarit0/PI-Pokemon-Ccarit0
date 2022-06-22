@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useSelector, useDispatch} from 'react-redux';
 import { getAllPoke } from '../../Redux/Actions';
-// import '../Styles/searchBar.css';
+// import '../Styles/SearcbBar.css'
 
 
 export default function SearcbBar(){
@@ -20,7 +20,7 @@ export default function SearcbBar(){
     }
 
     return(
-        <div>
+        <div className="containerSearch">
             <input className='searchImput' type='text' placeholder='Search pokes...' onChange={(e) => handleSearchBar(e)} />
             <button className="pokeSearch" type='submit' onClick={(e) => handleSubmit(e)}>Buscar</button>
         </div>

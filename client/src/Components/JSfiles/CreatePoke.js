@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {useNavigate} from 'react-router-dom';
+// import {useNavigate} from 'react-router-dom';
 import {postPoke, getAllTypesPoke} from '../../Redux/Actions/index'
 import { useDispatch, useSelector } from "react-redux";
 import '../Styles/CreatePoke.css'
@@ -94,6 +94,7 @@ export default function CreatePoke(){
     }
 
     let handleDelete = (type) => {
+        type.preventDefault();
         setInput({
             ...input,
             type: input.type.filter(pokeC => pokeC !== type)
@@ -188,14 +189,20 @@ export default function CreatePoke(){
                         }
                     </div>
                         <br />
-                    {
-                        allTypes.map(t => <button value={input.type} name={t} className="types" onClick={(e) => handleSelect(e)} key={t}>{t}</button>)
-                    }
+                        {
+                            allTypes.map(t => <button value={input.type} name={t} className="types" onClick={(e) => handleSelect(e)} key={t}>{t}</button>)
+                        }
                         {
                             msg.length > 0 && <p>{msg}</p>
                         }
                     <br />    
                         <button id='submit' className="buttonCreate" type='submit'>+</button>
+                    </div>
+                    <br />
+                    <div>
+                        {
+                            allTypes.map(d => <button className="delete" name={d} key={d} onClick={(e) => handleDelete(e)}>- {d}</button>)
+                        }
                     </div>
                     {
                         pokeCreado.name && <p>{`el poke ${pokeCreado.name} fue creado con éxito `}</p>

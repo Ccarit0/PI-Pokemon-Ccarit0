@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+
+.containerNav{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    background-color: rgb(178, 139, 215);
+    padding: 10px;
+    box-shadow: 2px 2px 4px rgb(77, 14, 91);
+   
+
+}
+
+.containerSearch{
+    background-color: rgb(211, 175, 249);
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    box-shadow: 2px 4px 6px rgb(77, 14, 91);
+    border: 0px;
+    border-radius: 15%;
+}
+
+.searchImput{
+    font-size: 15px;
+    letter-spacing:5px;
+    text-shadow:4px 4px 8px rgb(77, 14, 91);
+    border: 0px;
+}
+
+.pokeSearch{
+    border:0px;
+    
+    /* background-image:url(https://i.pinimg.com/originals/62/1a/15/621a15c85432d566db70ebbc524dbb79.gif); */
+
+}
+
+.buttonNav{
+    background-color: rgb(211, 175, 249);
+    color: azure;
+    width: 200px;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    letter-spacing:5px;
+    text-shadow:4px 4px 8px rgb(50, 8, 60);
+    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    border: 0px;
+    border-radius: 15%;
+}

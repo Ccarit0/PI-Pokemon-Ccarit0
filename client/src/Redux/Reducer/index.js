@@ -62,30 +62,13 @@ function rootReducer(state = initialState, action) {
                 pokemons: state.pokemons
             }
 
-        case 'ORDER_BY_AZ':
-            let orderPokes = action.payload === 'az' ?
-            state.pokemons.sort(function (a, b){
-                if(a.name > b.name) {
-                    return 1
-                }
-                if(b.name > a.name) {
-                    return -1
-                }
-                return 0
-            }) :
-            state.pokemons.sort(function(a,b){
-                if(a.name > b.name){
-                    return -1
-                }
-                if(b.name > a.name){
-                    return 1
-                }
-                return 0
-            })
-            return {
-                ... state,
-                pokemons: orderPokes
-            }
+        // case 'ORDER_BY_AZ':
+            
+            // console.log(orderPokes) // ordena bien, pero no llega a la UI
+            // return {
+            //     ... state,
+            //     pokemonsFiltered: orderPokes
+            // }
         
         case 'FILTER_BY_TYPE':
             const allPokes = state.pokemonsFiltered;

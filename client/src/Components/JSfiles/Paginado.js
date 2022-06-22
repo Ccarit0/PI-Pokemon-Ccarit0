@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import '../Styles/paginado.css';
+import '../Styles/Paginado.css';
 
 
 export default function Paginado({pokemonsPage, allPokemons, paginado}) {

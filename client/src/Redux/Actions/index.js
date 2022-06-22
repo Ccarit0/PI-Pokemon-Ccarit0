@@ -46,6 +46,7 @@ export function postPoke(payload){
 export function getAllTypesPoke(){
     return async (dispatch) => {
         let types = await axios.get('http://localhost:3001/types')
+        console.log(types.data, 'actions')
         return dispatch({
             type: "GET_TYPES",
             payload: types.data
