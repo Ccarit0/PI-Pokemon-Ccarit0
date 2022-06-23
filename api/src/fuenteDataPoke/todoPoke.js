@@ -138,8 +138,9 @@ function pokeNameApi(pokeName){
         height:pokeName.data.height,
         weight:pokeName.data.weight,
         img: pokeName.data.sprites.front_default,
-        types: pokeName.data.types.map((e) => e.name) 
+        types: pokeName.data.types.map((e) => e.type.name) 
     }
+    
     return pokeTakesByName;
 };
 
