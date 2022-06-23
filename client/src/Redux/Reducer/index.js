@@ -7,7 +7,8 @@ const initialState = {
     pokemonDetail: {}, // acá guardo la card completa de cada poke
     pokemonsFiltered: [], // Este es el arreglo que se mantiene sin cambios
     pokemonsTypes: [],
-    pokemonsCreate: {}
+    pokemonsCreate: {},
+    pokemonsName: {}
 }
 
 
@@ -24,14 +25,12 @@ function rootReducer(state = initialState, action) {
          
 
 
-        case 'GET_POKE':
+        case 'GET_POKE_NAME':
 
-            let fullPoke = state.pokemonsFiltered;
-            let onePoke = fullPoke.filter(p => p.name === action.payload)
-            let noPoke = fullPoke
+           console.log(action.payload, 'reducer')
             return {
                 ...state,
-                pokemons: onePoke.length ? onePoke : noPoke.concat(alert('no hay pokemons con est nombre wachi. Te muestro todos los poke de nuevo:...'))
+                pokemonsName: action.payload
             }
 
         case 'GET_TYPES':
@@ -70,39 +69,39 @@ function rootReducer(state = initialState, action) {
             //     pokemonsFiltered: orderPokes
             // }
         
-        case 'FILTER_BY_TYPE':
-            const allPokes = state.pokemonsFiltered;
-            const typeFiltered = action.payload === 'all' ? allPokes :
-            allPokes.filter(filt => filt.types.map(filt => filt.name).includes(action.payload))
-            return{
-                ...state,
-                pokemons: typeFiltered
-            }
+        // case 'FILTER_BY_TYPE':
+        //     const allPokes = state.pokemonsFiltered;
+        //     const typeFiltered = action.payload === 'all' ? allPokes :
+        //     allPokes.filter(filt => filt.types.map(filt => filt.name).includes(action.payload))
+        //     return{
+        //         ...state,
+        //         pokemons: typeFiltered
+        //     }
 
-        case 'ORDER_BY_STATS': //orden por estadísticas
-        let pokeStats = action.payload === "weak" ?
-        state.pokemons.sort((a,z) => {
-            if( a.attack > z.attack) {
-                return 1
-            }
-            if (z.attack > a.attack){
-                return -1
-            }
-            return 0
-        }) :
-        state.pokemons.sort((a, z) =>{
-            if( a.attack > z.attack){
-                return -1
-            }
-            if( z.attack > a.attack){
-                return 1
-            }
-            return 0
-        })
-        return {
-            ...state,
-            pokemons: pokeStats
-        }
+        // case 'ORDER_BY_STATS': //orden por estadísticas
+        // let pokeStats = action.payload === "weak" ?
+        // state.pokemons.sort((a,z) => {
+        //     if( a.attack > z.attack) {
+        //         return 1
+        //     }
+        //     if (z.attack > a.attack){
+        //         return -1
+        //     }
+        //     return 0
+        // }) :
+        // state.pokemons.sort((a, z) =>{
+        //     if( a.attack > z.attack){
+        //         return -1
+        //     }
+        //     if( z.attack > a.attack){
+        //         return 1
+        //     }
+        //     return 0
+        // })
+        // return {
+        //     ...state,
+        //     pokemons: pokeStats
+        // }
 
         case 'FILTER_API':
             let pokes=[]
@@ -121,6 +120,11 @@ function rootReducer(state = initialState, action) {
         case 'POST_POKE':
             return {
                 ...state,
+            }
+        case 'RESET_NAME':
+            return {
+                ...state,
+                pokemonsName: {}
             }
 
     default:

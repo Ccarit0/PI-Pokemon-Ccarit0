@@ -1,5 +1,82 @@
-.form{
-    border: 2px solid black;
-    margin-left: 50px;
-    width: 500px;
+
+.divFormu{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:space-around;
+   
 }
+
+.containerNav{
+
+    background-image: url(https://c.tenor.com/kaZ1ypmDh9IAAAAM/pmd2-pokemon.gif);
+    background-size: cover;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: rgb(178, 139, 215);
+    padding: 10px;
+    box-shadow: 2px 2px 4px rgb(77, 14, 91);
+   
+
+}
+
+.titleFormu{
+    background-color: rgb(242, 202, 251);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(87, 63, 91);
+    border:solid palevioletred 0px;
+    box-shadow: 2px 4px 8px rgb(77, 14, 91);
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px rgb(142, 46, 163);
+    
+}
+.form{
+    background-image: url(https://c.tenor.com/kaZ1ypmDh9IAAAAM/pmd2-pokemon.gif);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+.otherBlockCreate{
+    display: flex;
+    flex-flow: column wrap;
+    align-items:stretch;
+    justify-content: center;
+    /* margin-left: 30px; */
+    border-color: black;
+    
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    letter-spacing: 3px;
+    text-shadow: 2px 4px 6px rgb(215, 111, 194);
+}
+
+.pokename{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    letter-spacing: 5px;
+   
+    text-shadow: 2px 2px 4px rgb(142, 46, 163);
+    border:solid palevioletred 0px;
+    
+}
+
+.range{
+    background-color: rgba(250, 215, 246, 0.458);
+    border: solid black 2px; 
+    padding: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    
+     
+}
+   
+
+
+

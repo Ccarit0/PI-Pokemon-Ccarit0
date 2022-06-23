@@ -89,7 +89,7 @@ export default function CreatePoke(){
         // }
         e.preventDefault()
         dispatch(postPoke(input))
-        ('Poke created succesfully!!! :)')
+        // ('Poke created succesfully!!! :)')
         
     }
 
@@ -106,15 +106,17 @@ export default function CreatePoke(){
 
     return (
         <div className="divFormu">
-            <Nav />
-            <div className="titleFormu">
-                <h2 className="TitleP">Poke Creation: </h2>
-                <h2 className="subTitle">Create: </h2>
-                
+            <div className="containerNav">
+                <Nav />
             </div>
+            <div className="titleFormu">
+                <h2 className="TitleP">The New Poke</h2>
+            </div>
+            
+
                 <form className="form" onSubmit={(e) => handleSubmit(e)}>
                     <div className="otherBlockCreate">
-                        <div>
+                        <div className="pokename">
                             <label className="textName">Name: ...</label>
                             <input type='text' id='7' value={input.name} name='name' placeholder="PokeName" onChange={(e) => handleChange(e)} />
                             {
@@ -123,90 +125,94 @@ export default function CreatePoke(){
                                 )
                             }
                         </div>
-                    <div className="range">
-                        <label className="textRangeHP">Write here the HP of your poke...</label>
-                        <input type='range' min="0" max='50' id='1' value={input.hp} name='hp' onChange={(e) => handleChange(e)} />
-                        <h5 className="textCreated">{input.hp}</h5>
-                        {
-                            errors.name && (
-                                <span className="errors">{errors.hp}</span>
-                            )
-                        }
-                    </div>
-                    <br />
-                    <div>
-                    <label className="textRangeHP">Write here the ATTACK of your poke...</label>
-                        <input type='range' min="0" max='50' id='2' value={input.attack} name='attack' onChange={(e) => handleChange(e)} />
-                        <h5 className="textCreated">{input.attack}</h5>
-                        {
-                            errors.name && (
-                                <span className="errors">{errors.attack}</span>
-                            )
-                        }
-                    </div>
-                    <br />
-                    <div>
-                    <label className="textRangeHP">Write here the DEFENSE of your poke...</label>
-                        <input type='range' min="0" max='50' id='3' defaultValue={input.defense} name='defense' onChange={(e) => handleChange(e)} />
-                        <h5 className="textCreated">{input.defense}</h5>
-                        {
-                            errors.name && (
-                                <span className="errors">{errors.defense}</span>
-                            )
-                        }
-                    </div>
-                    <br />
-                    <div>
-                    <label className="textRangeHP">Write here the SPEED of your poke...</label>
-                        <input type='range' min="0" max='50' id='3' value={input.speed} name='speed' onChange={(e) => handleChange(e)} />
-                        <h5 className="textCreated">{input.speed}</h5>
-                        {
-                            errors.name && (
-                                <span className="errors">{errors.speed}</span>
-                            )
-                        }
-                    </div>
-                    <br />
-                    <div>
-                    <label className="textRangeHP">Write here the HEIGHT of your poke...</label>
-                        <input type='range' min="0" max='50' id='3' value={input.height} name='height' onChange={(e) => handleChange(e)} />
-                        <h5 className="textCreated">{input.height}</h5>
-                        {
-                            errors.name && (
-                                <span className="errors">{errors.height}</span>
-                            )
-                        }
-                    </div>
-                    <br />
-                    <div>
-                    <label className="textRangeHP">Write here the WEIGHT of your poke...</label>
-                        <input type='range' min="0" max='50' id='3' value={input.weight} name='weight' onChange={(e) => handleChange(e)} />
-                        <h5 className="textCreated">{input.weight}</h5>
-                        {
-                            errors.name && (
-                                <span className="errors">{errors.weight}</span>
-                            )
-                        }
-                    </div>
-                        <br />
+                        <div className="range">
+                            <label className="textRangeHP">Write here the HP of your poke...</label>
+                            <input type='range' min="0" max='50' id='1' value={input.hp} name='hp' onChange={(e) => handleChange(e)} />
+                            <h5 className="textCreated">{input.hp}</h5>
+                            {
+                                errors.name && (
+                                    <span className="errors">{errors.hp}</span>
+                                )
+                            }
+                        </div>
+                            <br />
+                        <div className="range">
+                        <label className="textRangeHP">Write here the ATTACK of your poke...</label>
+                            <input type='range' min="0" max='50' id='2' value={input.attack} name='attack' onChange={(e) => handleChange(e)} />
+                            <h5 className="textCreated">{input.attack}</h5>
+                            {
+                                errors.name && (
+                                    <span className="errors">{errors.attack}</span>
+                                )
+                            }
+                        </div>
+                            <br />
+                        <div className="range">
+                        <label className="textRangeHP">Write here the DEFENSE of your poke...</label>
+                            <input type='range' min="0" max='50' id='3' defaultValue={input.defense} name='defense' onChange={(e) => handleChange(e)} />
+                            <h5 className="textCreated">{input.defense}</h5>
+                            {
+                                errors.name && (
+                                    <span className="errors">{errors.defense}</span>
+                                )
+                            }
+                        </div>
+                            <br />
+                        <div className="range">
+                        <label className="textRangeHP">Write here the SPEED of your poke...</label>
+                            <input type='range' min="0" max='50' id='3' value={input.speed} name='speed' onChange={(e) => handleChange(e)} />
+                            <h5 className="textCreated">{input.speed}</h5>
+                            {
+                                errors.name && (
+                                    <span className="errors">{errors.speed}</span>
+                                )
+                            }
+                        </div>
+                            <br />
+                        <div className="range">
+                        <label className="textRangeHP">Write here the HEIGHT of your poke...</label>
+                            <input class="range" type='range' min="0" max='50' id='3' value={input.height} name='height' onChange={(e) => handleChange(e)} />
+                            <h5 className="textCreated">{input.height}</h5>
+                            {
+                                errors.name && (
+                                    <span className="errors">{errors.height}</span>
+                                )
+                            }
+                        </div>
+                            <br />
+                        <div className="range">
+                        <label className="textRangeHP">Write here the WEIGHT of your poke...</label>
+                            <input type='range' min="0" max='50' id='3' value={input.weight} name='weight' onChange={(e) => handleChange(e)} />
+                            <h5 className="textCreated">{input.weight}</h5>
+                            {
+                                errors.name && (
+                                    <span className="errors">{errors.weight}</span>
+                                )
+                            }
+                        </div>
+                            <br />
+                        <div>
                         {
                             allTypes.map(t => <button value={input.type} name={t} className="types" onClick={(e) => handleSelect(e)} key={t}>{t}</button>)
                         }
                         {
                             msg.length > 0 && <p>{msg}</p>
                         }
-                    <br />    
+                        </div>
+                            <br />    
                         <button id='submit' className="buttonCreate" type='submit'>+</button>
                     </div>
-                    <br />
-                    <div>
-                        {
-                            allTypes.map(d => <button className="delete" name={d} key={d} onClick={(e) => handleDelete(e)}>- {d}</button>)
-                        }
-                    </div>
-                    {
-                        pokeCreado.name && <p>{`el poke ${pokeCreado.name} fue creado con éxito `}</p>
-                    }
+                        <br />
+                        <div>
+                            {
+                                allTypes.map(d => <button className="delete" name={d} key={d} onClick={(e) => handleDelete(e)}>- {d}</button>)
+                            }
+                        </div>
+                        <div>
+                            {
+                                pokeCreado.name && <p>{`el poke ${pokeCreado.name} fue creado con éxito `}</p>
+                            }
+                        </div>
                 </form>
         </div>
     )

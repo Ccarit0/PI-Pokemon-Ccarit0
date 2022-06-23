@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { useDispatch , useSelector} from 'react-redux';
-import {getAllPokemons, getAllTypesPoke, reload, filterByType, orderByAz, orderByStats, filterApi} from '../../Redux/Actions'
+import {getAllPokemons, getAllTypesPoke, reload, filterByType, orderByAz, orderByStats, filterApi, resetName} from '../../Redux/Actions'
 import PokeCard from './PokeCard';
 import Paginado from './Paginado';
 import '../../Redux/Reducer/index';
@@ -9,6 +9,7 @@ import Nav from './Nav';
 import loading2 from '../../Media/Gifs/loading2.gif'
 import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
+
 
 
 // uso el useEffect para ejecutar la function getAllPokes() ANTEESS ( el array vacío)  de renderizar el componente HOME
@@ -19,7 +20,8 @@ export default function Home(){
     const dispatch = useDispatch();
     const allPokemons = useSelector(state => state.pokemons)
     const allTypes = useSelector(state => state.pokemonsTypes)
-    console.log(allTypes, 'types')
+    const pokeName = useSelector(state => state.pokemonsName)
+    // console.log(allTypes, 'types')
     const pokesFilt = useSelector(state => state.pokemonsFiltered)
     
     // estados locales\\
@@ -59,7 +61,9 @@ export default function Home(){
 
     function handleReload(e){
         e.preventDefault();
-        dispatch(reload(e))
+        dispatch(getAllPokemons())
+        setFiltrados(allPokemons)
+        dispatch(resetName())
     }
 
     function handleOrderAbc(e){
@@ -93,20 +97,43 @@ export default function Home(){
         // setCurrent(1);
         // setOrder(`Ordenado por ${e.taget.value}`)
     }//FUNCIONA, pero sólo hace el filt UNA VEZ para A-Z y UNA VEZ para Z-A; :/
-    console.log(filtrados, 'ando?')
+    // console.log(filtrados, 'ando?')
     
     
     function handleFilterType(e){
-        e.preventDefault();
-        dispatch(filterByType(e.target.value))
+        e.preventDefault();   
+        const typesFilters = allPokemons.filter((pokeF) => pokeF.types.find(type => type===e.target.value))
+        // console.log(typesFilters.length, 'home')
+        setFiltrados(typesFilters)
+     
     }
 
 
     function handleOrderByStats(e){
         e.preventDefault();
-        dispatch(orderByStats(e.target.value));
-        setCurrent(1);
-        setOrder(`Ordenado por ${e.target.value}`)
+        
+        console.log(e.target.value, 'home')
+        e.target.value === "defense" ?
+        setFiltrados ([...filtrados.sort((a,z) => {
+            if( a.attack > z.attack) {
+                return 1
+            }
+            if (z.attack > a.attack){
+                return -1
+            }
+            return 0
+        })]) :
+       setFiltrados ([...filtrados.sort((a, z) =>{
+            if( a.attack > z.attack){
+                return -1
+            }
+            if( z.attack > a.attack){
+                return 1
+            }
+            return 0
+        })])
+       
+
     }
 
     function handleFilterApi(e){
@@ -137,44 +164,59 @@ export default function Home(){
                         </Link>    
                     </div>
                     <Paginado className='paginadoStyle' pokemonsPage={currentPage} allPokemons = {allPokemons.length} paginado = {paginado}></Paginado> 
+                </div >
+                <div className="ImgFondo">
+                    <div className='filters'>
+                        <select className='abc' value=''onChange={(e) => handleOrderAbc(e)}>
+                            <option value='' disabled >Abc Order ...</option>
+                            <option value='asc'>A to Z ...</option>
+                            <option value='des'>Z to A ...</option>
+                        </select>
+                        <br />
+                        <select className='TypeFilter' onChange={(e) => handleFilterType(e)}>
+                            <option value='all'>Type Filter...</option>
+                            {
+                            allTypes?.map(p => {
+                                return <option value={p} key={p}>{p}</option>
+                            })   
+                            }
+                        </select>
+                        <br />
+                        <select className='filterStats' onChange={(e) => handleOrderByStats(e)}>
+                            <option value='all' disabled >Fight Order...</option>
+                            <option value='attack'>Attack Order...</option>
+                            <option value='defense'>Defense Order...</option>
+                        </select>
+                        <br />
+                        <select className='filterApi' onChange={(e) => handleFilterApi(e)}>
+                            <option value='pokes'>Exist or Created Filter...</option>
+                            <option value='api'>Exist now...</option>
+                            <option calue='bd'>Create...</option>
+                        </select>
+                    </div>
+                    <div className='botonReload'>
+                        <Link to='/home'>
+                            <button className='reload' onClick={(e) =>handleReload(e) }>Reinicianding :P ...</button>
+                        </Link>
+                    </div>
                 </div>
-                <div className='filters'>
-                    <select className='abc' value=''onChange={(e) => handleOrderAbc(e)}>
-                        <option value='' disabled >Abc Order ...</option>
-                        <option value='asc'>A to Z ...</option>
-                        <option value='des'>Z to A ...</option>
-                    </select>
-                    <br />
-                    <select className='TypeFilter' onChange={(e) => handleFilterType(e)}>
-                        <option value='all'>Type Filter...</option>
-                        {
-                         allTypes?.map(p => {
-                            return <option value={p} key={p}>{p}</option>
-                         })   
-                        }
-                    </select>
-                    <br />
-                    <select className='filterStats' onChange={(e) => handleOrderByStats(e)}>
-                        <option value='all'>Hp Order...</option>
-                        <option value='attack'>Attack Order...</option>
-                        <option calue='defense'>Defense Order...</option>
-                    </select>
-                    <br />
-                    <select className='filterApi' onChange={(e) => handleFilterApi(e)}>
-                        <option value='pokes'>Exist or Created Filter...</option>
-                        <option value='api'>Exist now...</option>
-                        <option calue='bd'>Create...</option>
-                    </select>
-                </div>
-                <div className='botonReload'>
-                    <Link to='/home'>
-                        <button className='reload' onClick={(e) =>handleReload(e) }>Reinicianding :P ...</button>
-                    </Link>
-                </div>
-                
                 <div className='cards'>
+                   {
+                    pokeName.name 
+                    ?
+                    <div>
+                        <PokeCard
+                        id={pokeName.id}
+                        img={pokeName.img}
+                        name={pokeName.name}
+                        types={pokeName.types}
+                        key={pokeName.id}
+                        /> 
+                        <button onClick={() =>dispatch(resetName()) }>reset</button>
+                    </div>
+                    :
 
-                    {pokesToPag && pokesToPag.map( p =>{
+                    pokesToPag && pokesToPag.map( p =>{
                     return(
                         <PokeCard
                         id={p.id}
@@ -184,7 +226,8 @@ export default function Home(){
                         key={p.id}
                         />
                         )
-                    })} 
+                    })
+                   }
                
                 </div>
             </div>

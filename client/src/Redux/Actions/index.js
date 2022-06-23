@@ -23,11 +23,18 @@ export function getAllPokemons(){
 }
 
 export function getAllPoke(name){
-    console.log(name) // el name es lo que escribe el usuario en el Input de SearchBar
-    return ({
-        type: "GET_ALL_POKE",
-        payload: name
-    })
+    // console.log(name) // el name es lo que escribe el usuario en el Input de SearchBar
+    return async function (dispatch){
+
+        const pokeName = await axios.get(`http://localhost:3001/pokemons/name?name=${name}`)
+        // console.log(createPoke.data, 'poke creado') //ACÁ TENGO MI POKE CREADO EN UN OBJ, NO APARECEN LOS TYPES
+        return dispatch({
+            type: "GET_POKE_NAME",
+            payload: pokeName.data
+        })
+    }
+    
+    
 }
 
 export function postPoke(payload){
@@ -46,7 +53,7 @@ export function postPoke(payload){
 export function getAllTypesPoke(){
     return async (dispatch) => {
         let types = await axios.get('http://localhost:3001/types')
-        console.log(types.data, 'actions')
+        // console.log(types.data, 'actions')
         return dispatch({
             type: "GET_TYPES",
             payload: types.data
@@ -104,5 +111,12 @@ export function filterApi (payload){
     return{
         type: "FILTER_API",
         payload
+    }
+}
+
+export function resetName (){
+    return{
+        type: "RESET_NAME",
+        
     }
 }
