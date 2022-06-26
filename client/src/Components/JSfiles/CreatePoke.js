@@ -4,6 +4,7 @@ import {postPoke, getAllTypesPoke} from '../../Redux/Actions/index'
 import { useDispatch, useSelector } from "react-redux";
 import '../Styles/CreatePoke.css'
 import Nav from "./Nav";
+import img2 from '../../Media/Gifs/hahahah.gif'
 
 
 export default function CreatePoke(){
@@ -118,16 +119,17 @@ export default function CreatePoke(){
                 <form className="form" onSubmit={(e) => handleSubmit(e)}>
                     <div className="otherBlockCreate">
                         <div className="pokename">
-                            <label className="textName">Name: ...</label>
+                            <label className="textName">Name </label>
                             <input type='text' id='7' value={input.name} name='name' placeholder="PokeName" onChange={(e) => handleChange(e)} />
                             {
                                 errors.name && (
                                     <p className="err">{errors.name}</p>
                                 )
                             }
+                           
                         </div>
                         <div className="range">
-                            <label className="textRangeHP">Write here the HP of your poke...</label>
+                            <label className="textRangeHP">Write here the HP of your poke...</label> <br />
                             <input type='range' min="0" max='50' id='1' value={input.hp} name='hp' onChange={(e) => handleChange(e)} />
                             <h5 className="textCreated">{input.hp}</h5>
                             {
@@ -172,7 +174,7 @@ export default function CreatePoke(){
                             <br />
                         <div className="range">
                         <label className="textRangeHP">Write here the HEIGHT of your poke...</label>
-                            <input className="range" type='range' min="0" max='50' id='3' value={input.height} name='height' onChange={(e) => handleChange(e)} />
+                            <input  type='range' min="0" max='50' id='3' value={input.height} name='height' onChange={(e) => handleChange(e)} />
                             <h5 className="textCreated">{input.height}</h5>
                             {
                                 errors.name && (
@@ -192,7 +194,7 @@ export default function CreatePoke(){
                             }
                         </div>
                             <br />
-                        <div>
+                        <div className="buttonsType">
                         {
                             allTypes.map(t => <button value={input.type} name={t} className="types" onClick={(e) => handleSelect(e)} key={t}>{t}</button>)
                         }
@@ -201,15 +203,16 @@ export default function CreatePoke(){
                         }
                         </div>
                             <br />    
-                        <button id='submit' className="buttonCreate" type='submit'>+</button>
-                    </div>
+                    <div className="lastBox">
+                        <div className="boxbutton">
+                            <button id='submit' className="buttonCreate" type='submit'>+</button>
+                        </div>
                         <br />
-                    
-                        {/* <div>
-                            {
-                                allTypes.map(d => <button className="delete" name={d} key={d} onClick={(e) => handleDelete(e)}>- {d}</button>)
-                            }
-                        </div> */}
+                        <div className="imgIzq">
+                            <img className="img2" src={ img2 ? img2 : img2 }  srcSet={img2} alt="PokeImage" />
+                        </div>
+                    </div>
+                    </div>
                         <div>
                             {
                                 pokeCreado.name && <div>{alert `el poke ${pokeCreado.name} fue creado con éxito `}</div>

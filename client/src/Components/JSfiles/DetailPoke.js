@@ -6,6 +6,7 @@ import Nav from "./Nav";
 import carta1 from '../../Media/Images/carta1edit.fw.png'
 import '../Styles/DetailPoke.css'
 import loading from '../../Media/Gifs/loading.gif'
+import newPoke from '../../Media/Gifs/pendding.gif'
 // import PokeCard from "./PokeCard";
 
 
