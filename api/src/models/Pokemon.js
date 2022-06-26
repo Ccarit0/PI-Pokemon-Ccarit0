@@ -38,6 +38,10 @@ module.exports = (sequelize) => {
       type: DataTypes.BOOLEAN,  // es decir, los que se agregan por body (los que crea el usuario)
       allowNull: false,
       defaultValue: true
+    },
+    img:{
+      type: DataTypes.STRING,
+      defaultValue: '../img/hahahah.gif'
     }
   },{
     timestamps: false

@@ -207,7 +207,7 @@ async function getById(req, res) {
 async function createPokemon (req, res) {
 
     let  {name, hp, attack, defense, speed, height, wheight, img, type} = req.body;
-    console.log(type, 'si llega') // siii llegó el obj de poke creado
+    // console.log(type, 'si llega') // siii llegó el obj de poke creado
 
     try {
         const pokemonCreated = await Pokemon.create({
@@ -221,7 +221,7 @@ async function createPokemon (req, res) {
             wheight:wheight,
             img:
                 img ||
-                'https://w7.pngwing.com/pngs/799/234/png-transparent-pokxe9mon-go-pikachu-pokxe9-ball-icon-blue-eggs-blue-game-leaf.png',
+                'https://www.pngplay.com/wp-content/uploads/10/Cherrim-Pokemon-No-Background.gif',
             });
       
             // console.log(pokemonCreated, 'nsaoeirgpia')
