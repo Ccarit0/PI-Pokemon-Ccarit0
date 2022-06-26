@@ -65,7 +65,7 @@ export function getDetails(id){
     return async function (dispatch) {
         try {
             let poke = await axios.get(`http://localhost:3001/pokemons/${id}`)
-            console.log(poke.data, 'poke.data')
+            // console.log(poke.data, 'poke.data')
             return dispatch({
                 type:"GET_DETAILS",
                 payload: poke.data
@@ -86,7 +86,7 @@ export function reload(payload){
 /////////// filters/////////////////////
 
 export function filterByType(payload){
-    // console.log(payload)
+    console.log(payload, 'que traigo?')
     return{
         type: "FILTER_BY_TYPE",
         payload

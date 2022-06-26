@@ -1,40 +1,115 @@
 .background{
     background-color: rgb(210, 169, 210);
-    flex-direction:column;
     display: flex;
-    align-items: center;
+    flex-flow: column wrap;
+    justify-content:space-between;
 }
 
-.imgDetail{
-    height: 400px;
-    width: 300px;
-    align-items: flex-end;
-    box-shadow:4px 4px 8px rgb(77, 14, 91);
+.cardbox{
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 8px 8px #7f00b2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    padding: 10px;
+}
 
+.card{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+   
+}
+
+.name{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:center;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 8px 8px #7f00b2;
+    
+}
+
+.pokeDetailName{
+    color: #7f00b2;
+    font-size: 20px;
+    letter-spacing:5px;
+}
+
+.imagenDetail{
+    background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURExUYHSggGBolGxUVITEhJSkrOi4uFx8zODMtNygtOisBCgoKDQ0NDw8NDisZFRkrLTcrLSsrKysrKys3NystKysrKystKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAR4AsAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIF/8QAHBABAQEBAQEBAQEAAAAAAAAAAAERAiFBMVGh/8QAGAEBAQEBAQAAAAAAAAAAAAAAAgEABQT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8A5IqOu6NFufEIQhQIaAFBVCL1FiIAQtTrEBkAGSgLGYAZABkZioryx7kAIQAoIBVSgBAAFEpFRVEAZglwFQVBEUBmRFHke4RrnN9S58IUAURRCiAUKDQAhoQCFQGQAZqAKigIiAPHHvRRCiUoqENICqIgENACgjWzM+shQaRUVRAXfMZkBbfzxURUVEQB4nQWT7/GaoqCClBQAoNACEAKDQAhCAQqAyADJRUVkQCvDHRAFiIKhQaqKhDQFIUa7syYyUhoAUEAKDRUVRAGYVBhVCDnx0ga7kjJCIoSIClBQgEBVEKJQKFAoEKUSlVCECgMwqDJRbEavW+Oe6TIBQQBYiEVCg0oqFApAUkQAgoAQhP0DGtdZviJFZABmoA5zpKiwKChILz1npDURaKIlUMUxrmau+JL+/1YLJVDg1ACg0AKDSKjUn7f4ooAzC8zUHNdKrfBFIUFwKIhVCgoKhQaIqFBqw6meJFtKClAKDSAEIQCFQGQAcx0xYBQVMAoIlNLfJCRAQoNBUKDQFIUApDQCFAACg1RFVFRRzHUIEFECBDUFqEIASJCinBQi886hQAopQagBQQVCg0ioqiAOW6igENFzzUa+LErKNYycEAKCiopQagBQaqAUGgBQaAFBoqEIFBZHKdUhiyKQpGr0zUtKDV2fWaqFBEUKJUIpzcKDUFqFApADEAKDQFIUBSFqRqQS9OS6hazaahxAoLBVCBQRFDGiAQ1UVCg0VAoIBSg0AhQAoU4NW0ByY6oECEAISFCkNACSoClBqQIFBCAcChQKDQgFBKAUGqEHKjqABCAFEoqLCg1ACgoqKUFChSg0AKDRRCg0AKBVQDg1YtqFcmOqAEILZ/qEIQNKDQKHBQBYIqKcGoAUGqkAoNKFCgUCBRK/9k=);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:center;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 8px 8px #7f00b2;
 }
 
 .allDetails{
-flex-wrap: nowrap;
-margin-top: -200px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:start;
+    align-items: initial;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 8px 8px #7f00b2;
 }
-    .firstD{
-        
-        flex-direction: row;
-        display: flex;
-        align-items: center;
-    }
 
-    .secondD{
-        flex-direction: row;
-        display: flex;
-        align-items: flex-end;
-    }
+.firstD{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:start;
+    align-items:center;
+    padding: 20px;
+    margin: 20px;
+    border: 0px;
+    letter-spacing: 3px;
+    text-shadow:4px 8px 8px #7f00b2;
+    border-radius: 5px;
+    box-shadow: 4px 8px 8px #7f00b2;
+
+}
+
+.secondD{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:start;
+    align-items:center;
+    padding: 20px;
+    margin: 20px;
+    border: 0px;
+    letter-spacing: 3px;
+    text-shadow:4px 8px 8px #7f00b2;
+    border-radius: 5px;
+    box-shadow: 4px 8px 8px #7f00b2;
+}
+
+.typesDetail{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:left;
+    align-items:center;
+    padding: 20px;
+    margin: 20px;
+    border: 0px;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    text-shadow:4px 8px 8px #7f00b2;
+    box-shadow: 4px 8px 8px #7f00b2;
+}
 
 .caminanding{
-    flex-direction: column;
-    display: flex;
-    background-color: rgb(89, 58, 118);
-    margin-bottom: -100px;
-    height: 100px;
-    width:fit-content;
+    flex-flow: row wrap;
+    justify-content:space-between;
+    align-items:flex-end;
+    padding: 20px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    box-shadow: 4px 8px 8px #7f00b2;
 }
+

@@ -33,12 +33,15 @@
     text-shadow: 2px 2px 4px rgb(142, 46, 163);
     
 }
+
+
 .form{
     background-image: url(https://c.tenor.com/kaZ1ypmDh9IAAAAM/pmd2-pokemon.gif);
     background-size:cover;
     background-repeat: no-repeat;
     background-position-x: right;
 }
+
 
 .otherBlockCreate{
     display: flex;

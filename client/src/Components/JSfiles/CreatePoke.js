@@ -14,7 +14,7 @@ export default function CreatePoke(){
     const [errors, setErrors] = useState({});
     const [ msg, setMsg] = useState("")
 
-    console.log(pokeCreado)
+    // console.log(pokeCreado)
 
     const [input, setInput] = useState({
         name: "",
@@ -70,7 +70,7 @@ export default function CreatePoke(){
 
     function handleSelect(e){
         
-        console.log(e.target.name)
+        // console.log(e.target.name)
         e.preventDefault()
 
         setInput({
@@ -89,17 +89,18 @@ export default function CreatePoke(){
         // }
         e.preventDefault()
         dispatch(postPoke(input))
+        // console.log(postPoke, 'true?')
         // ('Poke created succesfully!!! :)')
         
     }
 
-    let handleDelete = (type) => {
-        type.preventDefault();
-        setInput({
-            ...input,
-            type: input.type.filter(pokeC => pokeC !== type)
-        })
-    }
+    // let handleDelete = (type) => {
+    //     type.preventDefault();
+    //     setInput({
+    //         ...input,
+    //         type: input.type.filter(pokeC => pokeC !== type)
+    //     })
+    // }
 
 // console.log(input.type)
 
@@ -171,7 +172,7 @@ export default function CreatePoke(){
                             <br />
                         <div className="range">
                         <label className="textRangeHP">Write here the HEIGHT of your poke...</label>
-                            <input class="range" type='range' min="0" max='50' id='3' value={input.height} name='height' onChange={(e) => handleChange(e)} />
+                            <input className="range" type='range' min="0" max='50' id='3' value={input.height} name='height' onChange={(e) => handleChange(e)} />
                             <h5 className="textCreated">{input.height}</h5>
                             {
                                 errors.name && (
@@ -203,14 +204,15 @@ export default function CreatePoke(){
                         <button id='submit' className="buttonCreate" type='submit'>+</button>
                     </div>
                         <br />
-                        <div>
+                    
+                        {/* <div>
                             {
                                 allTypes.map(d => <button className="delete" name={d} key={d} onClick={(e) => handleDelete(e)}>- {d}</button>)
                             }
-                        </div>
+                        </div> */}
                         <div>
                             {
-                                pokeCreado.name && <p>{`el poke ${pokeCreado.name} fue creado con éxito `}</p>
+                                pokeCreado.name && <div>{alert `el poke ${pokeCreado.name} fue creado con éxito `}</div>
                             }
                         </div>
                 </form>

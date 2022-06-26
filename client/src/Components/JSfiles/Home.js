@@ -21,6 +21,7 @@ export default function Home(){
     const allPokemons = useSelector(state => state.pokemons)
     const allTypes = useSelector(state => state.pokemonsTypes)
     const pokeName = useSelector(state => state.pokemonsName)
+    const pokeCreado = useSelector(state => state.pokemonsCreate)
     // console.log(allTypes, 'types')
     const pokesFilt = useSelector(state => state.pokemonsFiltered)
     
@@ -34,6 +35,8 @@ export default function Home(){
     // le restamos los 12 que entran el pa pag, quedan 12 pokes
     //desde el nro 12 al 23, porq el último no lo incluye
     const [filtrados, setFiltrados] = useState([]);
+    const [bdpoke, setBdpoke] = useState({});
+   
     
     const pokesToPag = filtrados.slice(firstPoke, upToThisPoke)
     // console.log(filtrados, 'home')
@@ -58,6 +61,8 @@ export default function Home(){
     useEffect(()=>{
         setFiltrados(allPokemons)
     }, [allPokemons])
+
+    
 
     function handleReload(e){
         e.preventDefault();
@@ -112,7 +117,7 @@ export default function Home(){
     function handleOrderByStats(e){
         e.preventDefault();
         
-        console.log(e.target.value, 'home')
+        // console.log(e.target.value, 'home')
         e.target.value === "defense" ?
         setFiltrados ([...filtrados.sort((a,z) => {
             if( a.attack > z.attack) {
@@ -136,9 +141,16 @@ export default function Home(){
 
     }
 
-    function handleFilterApi(e){
+    function handleFilterApi(e){     
         e.preventDefault();
-        dispatch(filterApi(e.target.value))
+        if(e.target.value === 'bd'){
+            const bdPokemons = allPokemons.filter(p => p.createInDb)
+            bdPokemons.length > 0 && setFiltrados(bdPokemons)
+        }else{
+            const apiPokemons = allPokemons.filter(p => !p.createInDb)
+            apiPokemons.length > 0 && setFiltrados(apiPokemons)
+        }
+        // console.log(e.target.value, 'home')
     }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -189,9 +201,9 @@ export default function Home(){
                         </select>
                         <br />
                         <select className='filterApi' onChange={(e) => handleFilterApi(e)}>
-                            <option value='pokes'>Exist or Created Filter...</option>
+                            <option disabled value='pokes'>Exist or Created Filter...</option>
                             <option value='api'>Exist now...</option>
-                            <option calue='bd'>Create...</option>
+                            <option value='bd'>Create...</option>
                         </select>
                     </div>
                     <div className='botonReload'>

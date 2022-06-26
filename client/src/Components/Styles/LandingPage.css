@@ -31,8 +31,8 @@
     
     flex-wrap:1 1 200px ;
     flex-shrink: 1 1 200px;
-    color: rgb(114, 13, 118);
-    text-shadow: 4px 4px 8px rgb(212, 53, 244);;
+    color: #7f00b2;
+    text-shadow: 4px 4px 8px #77dd77;
     box-shadow: 4px 4px 8px rgb(77, 14, 91);
     letter-spacing:3px;
     text-align: center;
@@ -45,13 +45,13 @@
     flex-shrink: 1 1 200px;
     align-items: flex-end; 
     justify-content:end;
-    background-color:rgba(0, 0, 0, 0.916);
-    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    background-color:#2a0339;
+    box-shadow: 4px 6px 8px #77dd77;
     height: 30px;
     width: 300px;
-    border-color: rgb(218, 70, 198);
+    border-color: #7f00b2;
     border-radius: 8px;
-    color: rgb(212, 189, 234);
+    color: #77dd77;
 
 }
 .pikachuEsp{
@@ -64,9 +64,9 @@
 }
 
 .myName{
-    color: rgb(130, 32, 65);
+    color: #2a0339;
     letter-spacing:5px;
-    text-shadow:4px 4px 8px rgb(77, 14, 91);
+    text-shadow:4px 4px 8px #77dd77;
     align-items: flex-end;
     justify-content:left;
     /* margin-bottom: 0px;

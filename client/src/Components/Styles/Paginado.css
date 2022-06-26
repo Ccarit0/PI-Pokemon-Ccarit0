@@ -1,13 +1,13 @@
 .numberPage{
-    background-color:rgb(77, 14, 91) ;
+    background-color:#7f00b2 ;
     flex-direction: row;
     justify-content: space-between;
     margin: 4px;
     padding: 8px;
-    color:rgb(205, 159, 174) ;
+    color:#77dd77 ;
     font-size: 15px;
     letter-spacing:3px;
     border: 0px;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    box-shadow: 4px 4px 8px #7f00b2;
 }

@@ -47,7 +47,8 @@ function rootReducer(state = initialState, action) {
             }
 
         case 'POST_POKE':
-            console.log(action.payload.types)
+            // console.log(action.payload.createInDb, 'postpoke')  --> si llega true, es el 
+                                                // creado por el usuario, mostrar todos
            
             return {
                 ...state,
@@ -105,6 +106,7 @@ function rootReducer(state = initialState, action) {
 
         case 'FILTER_API':
             let pokes=[]
+            console.log(action.payload,'reducer')
             if( action.payload === 'pokes'){
                 pokes = state.pokemonsFiltered
             }else if (action.payload === 'db'){
@@ -116,11 +118,9 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 pokemons: pokes
             }
+            
+      
 
-        case 'POST_POKE':
-            return {
-                ...state,
-            }
         case 'RESET_NAME':
             return {
                 ...state,

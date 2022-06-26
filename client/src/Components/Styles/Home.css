@@ -4,7 +4,7 @@ para cambiar el CURSOR
 */
 
 .Home{
-    background-color: rgba(250, 144, 241, 0.644);
+    background-color:#8000b254;
     flex-direction: column;
     display: flex;
     flex-flow: column wrap;
@@ -31,9 +31,9 @@ para cambiar el CURSOR
 }
 
 .text{
-    color: rgb(130, 32, 65);
+    color:#77dd77;
     letter-spacing:5px;
-    text-shadow:4px 4px 8px rgb(77, 14, 91);
+    text-shadow:4px 4px 8px #7f00b2;
 }
 
 .bottonBox1{
@@ -53,20 +53,20 @@ para cambiar el CURSOR
 }
 
 .create{
-    background-color: rgb(77, 14, 91);
+    background-color: #7f00b2;
     flex-direction: row;
     justify-content: space-between;
     padding: 8px;
-    color:rgb(227, 158, 181) ;
+    color:#77dd77 ;
     font-size: 15px;
     letter-spacing:3px;
     border: 0px;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    box-shadow: 4px 4px 8px #7f00b2;
 }
 
 .filters{
-    
+    color: #77dd77;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -75,43 +75,45 @@ para cambiar el CURSOR
 
 
 .abc{
-    color:rgb(77, 14, 91); 
+    color:#ff69b4;
+    /* text-decoration: double; */
+    /* text-shadow: #7f00b2;  */
     font-size: 15px;
     letter-spacing:3px;
     width: 200px;
     border: 0px;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    box-shadow: 4px 4px 8px #7f00b2;
 }
 
 .TypeFilter{
-    color:rgb(77, 14, 91); 
+    color:#7f00b2; 
     font-size: 15px;
     letter-spacing:3px;
     width: 200px;
     border: 0px;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    box-shadow: 4px 4px 8px#ff69b4;
 }
 
 .filterStats{
-    color:rgb(77, 14, 91); 
+    color:#ff69b4; 
     font-size: 15px;
     letter-spacing:3px;
     width: 200px;
     border: 0px;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    box-shadow: 4px 4px 8px #7f00b2;
 }
 
 .filterApi{
-    color:rgb(77, 14, 91); 
+    color:#7f00b2; 
     font-size: 15px;
     letter-spacing:3px;
     width: 200px;
     border: 0px;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    box-shadow: 4px 4px 8px #ff69b4;
 }
 
 .botonReload{
@@ -120,22 +122,22 @@ para cambiar el CURSOR
     flex-flow: column wrap;
     justify-content:space-around;
     padding: 30px;
-    box-shadow: 0px 3px 3px rgb(77, 14, 91);
+    box-shadow: 0px 3px 3px #7f00b2;
 }
 
 .reload{
     /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xrccaROE2SFPe5auk_iE9tHn8fVj4bmtuw&usqp=CAU);
     background-size:contain ;
     background-repeat: no-repeat; */
-    background-color: rgb(77, 14, 91); 
-    color: rgb(227, 158, 181) ; 
+    background-color: #7f00b2; 
+    color: #77dd77;
     font-size: 15px;
     letter-spacing:3px;
     width: 200px;
     height: 30px;
     border: 0px;
     border-radius: 20px;
-    box-shadow: 4px 4px 8px rgb(77, 14, 91);
+    box-shadow: 4px 4px 8px #ff69b4;
    
 }
 
@@ -144,5 +146,5 @@ para cambiar el CURSOR
     flex-flow: row wrap;
     justify-content:flex-end;
     padding: 30px;
-    box-shadow: 0px 3px 3px rgb(77, 14, 91);
+    box-shadow: 0px 3px 3px #7f00b2;
 }

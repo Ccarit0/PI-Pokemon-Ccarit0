@@ -15,10 +15,11 @@ const params = useParams()
 
 const dispatch = useDispatch()
 const pokeD = useSelector((state) => state.pokemonDetail)
-console.log(typeof pokeD)
+// console.log(typeof pokeD)
 // const UpperName = 'pikachu'.toUpperCase() // preguntar a FLOR como carajo usar el UpperCASE
 
-
+// const UpperName = await pokeD.name.toUpperCase()
+// console.log(UpperName)
 
 
 useEffect(() => {
@@ -35,26 +36,33 @@ useEffect(() => {
                     <img src={loading} alt='image not found'></img>
                 </div> 
                 :
-                <div>
-                    <h1 className="pokeDetailName">Detalle de<br />{pokeD.name}</h1>
-                    <img className='imgDetail'src={carta1} alt='not found'></img>
-                    <div className="allDetails">
-                        <div className="firstD">
-                            <h4>HP: {pokeD.hp}</h4><br/>
-                            <h4>ATTACK: {pokeD.attack}</h4><br/>
-                            <h4>DEFENSE: {pokeD.defense}</h4><br/>
+                <div className="cardbox">
+                    <div className="card">
+                        <div className="name">
+                            <h1 className="pokeDetailName">Detalle<br />{pokeD.name}</h1>
                         </div>
-                        <div className='secondD'>
-                            <h4>WEIGHT: {pokeD.weight}</h4>
-                            <h4>HEIGHT: {pokeD.height}</h4>
+                        <div className="imagenDetail">
+                            <img className="pokeimg" src={ pokeD.img ? pokeD.img : pokeD.name } alt="PokeImage" height="450px" width="450px" />
+                                {/* {console.log(pokeD.img, 'que traigo')} */}
                         </div>
-                    </div>
-                        <div className="typesDetail">
-                            <h3>TYPES: {pokeD.types}</h3>
+                        <div className="allDetails">
+                            <div className="firstD">
+                                <h4>HP: {pokeD.hp}</h4><br/>
+                                <h4>ATTACK: {pokeD.attack}</h4><br/>
+                                <h4>DEFENSE: {pokeD.defense}</h4><br/>
+                            </div>
+                            <div className='secondD'>
+                                <h4>WEIGHT: {pokeD.weight}</h4>
+                                <h4>HEIGHT: {pokeD.height}</h4>
+                            </div>
                         </div>
-                    <div>
-                        <img className='caminanding'src={loading} alt='image not found'></img>
-                    </div>
+                            <div className="typesDetail">
+                                <h3>TYPES:<br/>{pokeD.types}</h3>
+                            </div>
+                            <div>
+                                <img className='caminanding'src={loading} alt='image not found'></img>
+                            </div>
+                        </div>
                 </div>
             }
             
