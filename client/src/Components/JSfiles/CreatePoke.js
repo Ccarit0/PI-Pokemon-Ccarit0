@@ -129,7 +129,7 @@ export default function CreatePoke(){
                            
                         </div>
                         <div className="range">
-                            <label className="textRangeHP">Write here the HP of your poke...</label> <br />
+                            <label className="textRangeHP">Write here the HP of your poke...</label> 
                             <input type='range' min="0" max='50' id='1' value={input.hp} name='hp' onChange={(e) => handleChange(e)} />
                             <h5 className="textCreated">{input.hp}</h5>
                             {
@@ -201,21 +201,20 @@ export default function CreatePoke(){
                         {
                             msg.length > 0 && <p>{msg}</p>
                         }
-                        </div>
-                            <br />    
+                    </div>
+                        <br />    
                     <div className="lastBox">
                         <div className="boxbutton">
                             <button id='submit' className="buttonCreate" type='submit'>+</button>
                         </div>
-                        <br />
-                        <div className="imgIzq">
+                        {/* <div className="imgIzq">
                             <img className="img2" src={ img2 ? img2 : img2 }  srcSet={img2} alt="PokeImage" />
+                        </div> */}
                         </div>
-                    </div>
                     </div>
                         <div>
                             {
-                                pokeCreado.name && <div>{alert `el poke ${pokeCreado.name} fue creado con éxito `}</div>
+                                pokeCreado.name && <div>{alert (`el poke ${pokeCreado.name} fue creado con éxito `)}</div>
                             }
                         </div>
                 </form>

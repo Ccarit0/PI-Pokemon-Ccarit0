@@ -96,9 +96,9 @@
     color: #7f00b2;
     box-shadow: 2px 3px 4px #7f00b2;;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
-    align-items:flex-start;
+    align-items:center;
     letter-spacing: 5px;
     padding: 5px;
     margin: 10px;
@@ -106,23 +106,33 @@
     border-radius: 15%;
 }
 .lastBox{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content:space-around;
+    background-image: url('../../Media/Gifs/hahahah.gif');
+    background-size:cover;
+    background-repeat:no-repeat;
+    flex-flow: column wrap;
+    justify-content:space-between;
     align-items:center;
+    /* margin-bottom: -30px; */
 }
 
 .boxbutton{
     display: flex;
     flex-flow: column wrap;
-    justify-content: flex-end;
-    align-items:flex-end;
-    padding: 50px;
+    justify-content: flex-start;
+    align-items:center;
+    padding: 100px;
+    
     
 }
 
 .buttonCreate{
-    color:#7f00b2 ;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items:center;
+    color: #7f00b2 ;
+    font-size: 25px;
+    margin-top: -80px;
     background-color: #77dd77;;
     width: 50px;
     height: 50px;
