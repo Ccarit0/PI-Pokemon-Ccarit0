@@ -175,6 +175,12 @@ export default function Home(){
                             <button className='create'>New Poke</button>
                         </Link>    
                     </div>
+                    <div>
+                        <Link to= '/about'>
+                            <button className='butAbout'>About</button>
+                        </Link>
+                    </div>
+
                     <Paginado className='paginadoStyle' pokemonsPage={currentPage} allPokemons = {allPokemons.length} paginado = {paginado}></Paginado> 
                 </div >
                 <div className="ImgFondo">

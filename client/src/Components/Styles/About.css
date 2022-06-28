@@ -1,0 +1,148 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+
+.background{
+    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:space-around;
+    display: flex;
+    align-items: center;
+    background-image: url(https://pbs.twimg.com/media/EqLqA4kW4AMdZb3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    background-color: #77dd773a;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:space-around;
+    align-items:center;
+    
+    /* background-color: rgb(26, 25, 25); */
+
+}
+
+.textos{
+    background-color: #00000089;
+    padding: 20px;
+    border-radius: 5%;
+}
+.boxIzq{
+    color: #ff69b4;
+    flex:1 1 auto;
+    flex-flow: column wrap; 
+    justify-content:flex-start;
+    align-items:flex-start;
+    padding: 10px; 
+    
+   /* box-sizing: 350px; */
+}
+
+.name{
+    background-color: #ff69b4;
+    flex-flow: column wrap;
+    display: flex;
+    justify-content: baseline;
+    align-items:center;
+    color:#77dd77 ;
+    text-shadow: 2px 2px 4px #7f00b2;
+    padding: 10px;
+    letter-spacing: 10px;
+}
+.boxTecno{
+    flex:1 1 auto;
+    flex-flow: column wrap;
+    display: flex;
+    justify-content:flex-end;
+    align-items:flex-end;
+    margin: 40px;
+}
+.dosIzq{
+    flex-flow: row wrap;
+    /* margin-right: 0px; */
+}
+
+.tresder{
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items:flex-end;
+    margin-top: -300px;
+    margin-right: -300px;
+}
+/* .reactreduxBox{
+    box-shadow: 2px 4px 8px #ff69b4;
+    align-items:baseline;
+    justify-content: center;
+    flex: content;
+} */
+
+
+.node{
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    margin-top: -30px;
+    margin-right: 40px;
+} 
+.reactredux{
+    
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    margin: 40px;
+    margin-left: 30px;
+}
+
+ .express{
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 20%;
+    margin-right: 150px;
+ }
+
+ .htmlcssjs{
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 20%;
+    margin-top: 100px;
+    margin-left: 10px;
+ }
+
+ .pgAdmin{
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 20%;
+    margin-left: 100px;
+ }
+
+ .subtit{
+    color: #7f00b2;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px #77dd77;
+ }
+
+ .home{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:space-around;
+    padding: 10px;
+    background-color: #7f00b2;
+    color:#77dd77;
+    border-radius: 5%;
+    border: 0px;
+    box-shadow: 0px 3px 3px #7f00b2;
+ }

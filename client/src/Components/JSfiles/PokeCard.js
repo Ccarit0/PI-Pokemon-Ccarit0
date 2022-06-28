@@ -14,7 +14,7 @@ const PokeCard = ({id, img, name, types}) =>{
         <div className="Card">
             <h3 className="PokeName">{name.toUpperCase()}</h3>
             <Link to={'/pokemons' + id}>
-                <img className="pokeImg" src={img} defaultVale={newPoke} alt='PokeImg not found'  ></img>
+                <img className="pokeImg" src={img} defaultValue={newPoke} alt='PokeImg not found'  ></img>
             </Link>
             <h4 className="types">TYPES: {<br />}{types.map(type =>  "-" + type + " " )}</h4>
             <Link to={`/pokemons/${id}`}>{<button className="boton">+</button>}</Link>

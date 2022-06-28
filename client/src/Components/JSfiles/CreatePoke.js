@@ -4,7 +4,7 @@ import {postPoke, getAllTypesPoke} from '../../Redux/Actions/index'
 import { useDispatch, useSelector } from "react-redux";
 import '../Styles/CreatePoke.css'
 import Nav from "./Nav";
-import img2 from '../../Media/Gifs/hahahah.gif'
+// import img2 from '../../Media/Gifs/hahahah.gif'
 
 
 export default function CreatePoke(){
@@ -152,7 +152,7 @@ export default function CreatePoke(){
                             <br />
                         <div className="range">
                         <label className="textRangeHP">Write here the DEFENSE of your poke...</label>
-                            <input type='range' min="0" max='50' id='3' defaultValue={input.defense} name='defense' onChange={(e) => handleChange(e)} />
+                            <input type='range' min="0" max='50' id='3' value={input.defense} name='defense' onChange={(e) => handleChange(e)} />
                             <h5 className="textCreated">{input.defense}</h5>
                             {
                                 errors.name && (

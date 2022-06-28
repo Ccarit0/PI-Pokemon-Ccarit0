@@ -65,6 +65,19 @@ para cambiar el CURSOR
     box-shadow: 4px 4px 8px #7f00b2;
 }
 
+.butAbout{
+    background-color: #7f00b2;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    color:#77dd77 ;
+    font-size: 15px;
+    letter-spacing:3px;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px #7f00b2; 
+}
+
 .filters{
     color: #77dd77;
     display: flex;

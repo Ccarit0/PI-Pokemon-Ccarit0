@@ -5,6 +5,7 @@ import  LandingPage  from './Components/JSfiles/LandingPage';
 import  Home  from './Components/JSfiles/Home';
 import  CreatePoke  from './Components/JSfiles/CreatePoke';
 import  DetailPoke  from './Components/JSfiles/DetailPoke';
+import About from './Components/JSfiles/About';
 // import PokeCard from './Components/JSfiles/PokeCard';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             {/* <Route path='/pokemons/:name' element={<PokeCard />}></Route> */}
             <Route path= '/pokemons/create' element={<CreatePoke/>}></Route>
             <Route path= '/pokemons/:id' element={<DetailPoke/>}></Route>
+            <Route path='/about' element={<About />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
